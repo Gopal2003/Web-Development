@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Hello</h4>
+    <p><b>Hello</b></p>
+    <p>2<sup>2</sup> = 4</p>
+    <p><b>co<sub>2</sub> is a gas</b></p>
+    <ol start="0">
+        <li>Hello</li>
+        <li>My name is</li>
+        <li>Unknown</li>
+    </ol>
+    <ul>
+        <li>Hello</li>
+        <li>My Name is</li>
+        <li>Unknown</li>
+    </ul>
+
+    <input type="text" placeholder="Name">
+    <input type="email" placeholder="email">
+    <input type="password" placeholder="Password">
+    <input type="date" placeholder="date">
+    <br>
+    <!--
+        the name="gender" will not work in checkbox because the checkbox created with the intention to choose multiple option.
+    -->
+    <input name="gender" type="checkbox">male
+    <input name="gender" type="checkbox">female
+    <input name="gender" type="checkbox">other
+    <br>
+    <!--
+        When you assign the same value to the name attribute of multiple radio buttons (like "gender" in your example), they become part of the same radio group.
+        When a user selects one radio button in the group, any other selected button within that group gets automatically deselected.
+        This ensures that only one option can be chosen at a time.
+    -->
+    <input name="gender" type="radio">male
+    <input name="gender" type="radio">female 
+    <input name="gender" type="radio">other
+</body>
+</html>
