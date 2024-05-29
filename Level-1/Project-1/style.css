@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+#nav{
+    height: 100px;
+    width: 100%;
+    /* background: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px; /*padding: up-down left-right*/
+}
+
+#nav-part1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* gap: 5px; */
+}
+
+#nav h3{
+    font-size: 16px;
+    border: 1.5px solid black;
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 50px;
+}
+
+#nav i{
+    font-size: 17px;
+    border: 1.5px solid black;
+    font-weight: 400;
+    padding: 5px 8px;
+    border-radius: 50px;
+}
+
+#nav h1{
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#nav button{
+    padding: 7px 12px;
+    border-radius: 50px;
+    border: 1.5px solid black;
+    font-size: 15px;
+    font-weight: 400;
+    background-color: white;
+}
+
+#nav #btn2{
+    border: none;
+    color: white;
+    background-color: orangered;
+}
+
+/*The direct h1 inside the main i.e., the child inside the id main*/
+#main>h1{
+
+    font-size: 100px;
+    font-weight: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* background-color: red; */
+    transform: translate(-50%,-50%);
+    width: 100%;
+    text-align: center;
+}
+
+img{
+    height: 400px;
+    width: 300px;
+    object-fit: cover;/*Enhances image*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 22px;
+    transform: translate(-50%,-50%);
+}
+
+#img3{
+    transform: translate(-50%,-50%) rotate(-9deg);/*rotate() is the property of translate and hence it will overwrite the treanslate*/
+}
+#img2{
+    transform: translate(-50%,-50%) rotate(-15deg);/*rotate() is the property of translate and hence it will overwrite the treanslate*/
+}
+#img1{
+    transform: translate(-50%,-50%) rotate(-20deg);/*rotate() is the property of translate and hence it will overwrite the treanslate*/
+}
+
+#btm{
+    display: flex;
+    justify-content: space-between;
+}
+#btm-left{
+    margin-bottom: 30px;
+    font-size: 17px;
+}
+/* 
+#btm-text{
+    margin-left: 1400px;
+} */
