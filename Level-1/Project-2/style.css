@@ -65,5 +65,30 @@ html,body{
     background-image: url(https://assets-global.website-files.com/64589fb989b2b33c593db89d/6458a6db645ec6a527000cfa_home-hero.webp);
 }
 
+#about
+{
+    height: 45%;
+    width: 100%;
+    background-color: rgb(104, 225, 225);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+}
+
+#about h2
+{
+    /* background-color: red; */
+    width: 60%;
+    font-size: 59px;
+    letter-spacing: -1.5px;
+    line-height: 72px;
+}
+
+#about-part-2{
+    background-color: blue;
+    height: 100%;
+    width: 40%;
+}
 
 
