@@ -104,15 +104,23 @@ img{
     transform: translate(-50%,-50%) rotate(-20deg);/*rotate() is the property of translate and hence it will overwrite the treanslate*/
 }
 
-#btm{
-    display: flex;
-    justify-content: space-between;
+
+ #btm-left{
+    bottom: 5%;
+    position: absolute;
+    left: 1%;
+    font-size: 14px;
 }
-#btm-left{
-    margin-bottom: 30px;
-    font-size: 17px;
-}
-/* 
+
+#icons{
+    position: absolute;
+    bottom: 9%;
+    left: 93%;
+} 
+
 #btm-text{
-    margin-left: 1400px;
-} */
+    position: absolute;
+    bottom: 5%;
+    left: 89%;
+}
+
