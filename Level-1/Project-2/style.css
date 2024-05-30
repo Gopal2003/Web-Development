@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+}
+
+#nav{
+    display: flex;
+    /* background-color: red; */
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+}
+
+#nav h3{
+    background-color: black;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 80px;
+    margin-left: 4px;
+}
+
+#intro{
+    height: 30%;
+    width: 100%;
+    /* background-color: beige; */
+    padding: 20px 30px;
+}
+
+#intro h1{
+    font-size: 60px;
+    letter-spacing: -3px;/*Space between letters*/
+    line-height: 60px; /*we Can change the upper space and bottom space of a sentence using this property*/
+}
+
+#below-intro{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#below-intro h3, #below-intro h4{
+    font-size: 17px;
+    
+}
+
+#hero-image{
+    width: 100%;
+    height: 100%;
+    /* background-color: orange; */
+    background-size: cover;
+    background-image: url(https://assets-global.website-files.com/64589fb989b2b33c593db89d/6458a6db645ec6a527000cfa_home-hero.webp);
+}
+
+
+
