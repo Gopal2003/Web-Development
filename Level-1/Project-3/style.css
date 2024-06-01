@@ -133,11 +133,29 @@ todo: 2) uncomment the below line of code.
     background-image: url(https://plus.unsplash.com/premium_photo-1661331840715-086514dff6c2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
 }
 
-#bottom{
+.bottom{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 12px 0 ;
+    /* background-color: pink; */
 } 
 
-#bottom i{
-    font-size: 20px;
+.bottom i{
+    /* background-color: green; */
+    font-size: 24px;
+    padding: 0 20px;
+    border: 2px solid #000;
+    border-radius: 60px;
+}
+
+.bottom i:hover{
+    background-color: black;
+    color: white;
+}
+
+.btm-left h2{
+    padding-bottom: 5px;
+    /* margin-bottom: 60px; */
+    /* background-color: #fff; */
 }
