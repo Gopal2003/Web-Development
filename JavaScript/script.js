@@ -4,11 +4,18 @@ const obj = {
     "Rashi kya hai": "patanahi",
     printHello(){
         console.log("Hellliyo");
-    }
+    },
+    // key: "Value" ! explanation is in notes. First try to recall it yourself.
 
 };
+
+for(var key in obj)
+{
+    console.log(key,obj.key);
+}    
+// console.log(obj.name);
+/*
 // obj.printHello();
-console.log(obj.name);
 
 obj.name = "Agarwal";
 console.log(obj.name);
@@ -23,4 +30,6 @@ obj["name"] = "Gopala";
 console.log(obj["name"]);
 console.log(obj.name);
 // console.log(obj[name]); deprecated.
+*/
+
 
