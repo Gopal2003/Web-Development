@@ -1,3 +1,4 @@
+/*
 
 const obj = {
     name : "Gopal",
@@ -31,7 +32,7 @@ obj["name"] = "Gopala";
 console.log(obj["name"]);
 console.log(obj.name);
 // console.log(obj[name]); deprecated.
-*/
+
 
 function abcd( a)
 {
@@ -54,6 +55,76 @@ a[-1] = 12;
 console.log(a)
 
 delete obj.name;
+*/
+
+//IIFE Immediate Invoke Function Expression
+
+/*
+var a = (function(){
+        var privateVal = 12;
+
+        return {
+            getter: function()
+            {
+                console.log(privateVal);
+            },
+
+            setter : function(val)
+            {
+                privateVal = val;
+            }
+        }
+})()
+*/
+
+/*
+var a = (function(){
+    var privateVal = 14;
+
+    // return privateVal;
+
+    return {
+        getter: privateVal
+    }
+
+})()
+*/
+
+/*
+var human ={
+    canFly : false,
+    canTalk : true,
+    canWalk : true
+}
+
+
+var student = {
+    isEducated : false,
+    canCode : false
+}
+
+student.__prototype__ = human; 
+*/
+
+console.log(this);
+
+function abcd()
+{
+    console.log(this);
+}
+
+abcd();
+
+var obj = {
+    name : "Gopal",
+    dummyFunc : function(){
+        console.log(this);
+    }
+}
+
+obj.dummyFunc(); 
+
+
 
 
 
