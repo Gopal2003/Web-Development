@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#main{
+    height: 85%;
+    width: 100%;
+    background-color: #111;
+    display: flex;
+    padding: 5vw 10vw;
+}
+
+#left{
+    height: 100%;
+    width: 45%;
+    background-color: #333;
+    /* background-image: url(https://m.media-amazon.com/images/M/MV5BNGViM2M4NmUtMmNkNy00MTQ5LTk5MDYtNmNhODAzODkwOTJlXkEyXkFqcGdeQXVyMTY1NDY4NTIw._V1_.jpg); */
+    background-size: cover;
+}
+
+#right{
+    height: 100%;
+    width: 55%;
+    /* background-color: yellow; */
+    padding: 0 3vw;
+}
+
+#right h3{
+    font-size: 20px;
+}
+
+#all-songs{
+    /* background-color: red; */
+    height: 85%;
+    /* margin-top: 30px; */
+    padding-top: 30px;
+}
+
+.song-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top:1px solid #5a5a5a;
+    padding: 10px 10px;
+}
+.song-card:nth-last-child(1)
+{
+    border-bottom: 1px solid #5a5a5a;
+}
+
+.song-card .part1{
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.song-card:hover{
+    background-color: #1d1c1c;
+}
+.part1 img{
+    height: 55px;
+    width: 55px;
+    margin-right: 20px;
+}
+
+.part1 h2{
+    font-size: 15px;
+}
+
+.song-card h6{
+    font-size: 13px;
+}
+
+#player{
+    width: 100%;
+    height: 15%;
+    background-color: #0e0d0d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px
+}
+
+#player h3{
+    background-color: rgb(41, 40, 40);
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#player h3 i{
+    font-size: 20px;
+}
+
+/*:active is a pseudo class.
+The below code is used to decrease the size of the element by 0.10% and for that we use scale.
+the code is triggered when the button is active or some action performed on the button.
+*/
+#player h3:active{ 
+    scale: 0.99;
+}
