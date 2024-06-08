@@ -72,7 +72,7 @@ play.addEventListener("click", function () {
 
 forward.addEventListener("click", function () {
   if (selectedSong < arr.length - 1) {
-    selectedSong = selectedSong + 1;
+    selectedSong++;
     play.innerHTML = `<i class="ri-pause-line"></i>`;
     mainFunction();
     audio.play();
@@ -82,7 +82,7 @@ forward.addEventListener("click", function () {
 
 backward.addEventListener("click", function () {
   if (selectedSong > 0) {
-    selectedSong = selectedSong - 1;
+    selectedSong--;
     play.innerHTML = `<i class="ri-pause-line"></i>`;
     mainFunction();
     audio.play();
