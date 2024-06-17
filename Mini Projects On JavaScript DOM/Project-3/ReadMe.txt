@@ -1,1 +1,1 @@
-In this project, I will be Creating the Custom Mouse Cursor with the help of a YouTube Video from Sheriyans Codding School.
+In this project, I will be Creating the Custom Mouse Cursor with the help of a YouTube Video from Sheriyans Codding School Channel.
