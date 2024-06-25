@@ -71,7 +71,7 @@ var arr = [];
 
 for (var i = 0; i < 10; i++) {
     arr.push(function(){
-        setTimeout(function(){
+        setTimeout(function(){ 
             console.log(i);
         },1000)
     })
