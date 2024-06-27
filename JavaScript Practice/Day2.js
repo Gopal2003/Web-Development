@@ -105,20 +105,107 @@ var ans = Object.create(null); // If null is removed, then some error is thrown
 ans["Gopal"] = 4;
 console.log(ans);
 
-function abcd()
-{
-    this.name = "Harsh"; // this refers to that imaginary object. i.e., {"name" : "Harsh"}
-    this.salary = 34792856;
+function abcd() {
+  this.name = "Harsh"; // this refers to that imaginary object. i.e., {"name" : "Harsh"}
+  this.salary = 34792856;
 }
 
 var obj = new abcd();
 console.log(obj); // The movement we say new, it will create an imaginary Object.
 
-
-class Abcd{
-    constructor(){}
-    a = 12;
+class Abcd {
+  constructor() {}
+  a = 12;
 }
 
 var ans1 = new Abcd();
 console.log(ans1);
+
+/*
+ ! Question 6
+ *Higher Order Function.
+ */
+
+//Demonstration of the working of the below function: First, a function is returned. Then the returned function is called with its parameter and sum of inp + inp2 is calculated and returned.
+//! Note: since the function inside the return statement is not called, we can't execute it.
+function HOF(inp) {
+  return function (inp2) {
+    return inp + inp2;
+  };
+}
+
+var returnedFunction = HOF(10); // Function is returned.
+console.log(returnedFunction(20)); // Callind the returned function with the parameter 20;
+
+/*
+ ! Question 7
+ *This Keyword.
+ */
+
+/*
+ * At global scope, this = window (this prints window).
+ * At function scope, this = window
+ * method = object
+ * function
+ */
+
+//At global scope
+console.log(this);
+
+//At Function Scope
+function abcde() {
+  console.log(this);
+}
+
+abcde();
+
+//Inside Method.
+
+var obj = {
+  name: "Harsh",
+  sayName: function () {
+    console.log(this);// Return its own object
+  }
+};
+
+obj.sayName();
+
+
+/*
+ * Call Apply Bind.
+ */
+
+//The default value of this inside a function is window. using .call, we can specify the value of this. 
+
+
+var obj1 = {name : "Gopal"};
+
+function CAB()
+{
+  console.log(this);
+}
+
+CAB.call(obj1);// Here, this = obj1.
+
+/*
+ *Apply - Same as call but simplifies the technique of passing the arguments.
+ */
+
+ var obj1 = {name : "Gopal"};
+
+function apply(a,b,c,d)
+{
+  console.log(this,a,b,c,d);
+}
+
+//The only difference is that we pass the remaining arguments into an array.
+apply.apply(obj1,[1,2,3,4]);// Here, this = obj1.
+apply.call(obj1,1,2,3,4);
+
+
+/*
+ *Bind- Bind is same as call but bind never calls the function i.e., it will just bind the function with the value you passed for this.
+ */
+
+ var saved = apply.bind(obj1,1,2,3);
+ saved();
