@@ -31,16 +31,13 @@ var ans = arr.map(function (val) {
   if (length >= 5) {
     var tag = `<p>${val}</p>`;
     return tag;
-  }
-  else {
+  } else {
     var tag = `<span>${val}</span>`;
     return tag;
   }
 });
 
-
 console.log(ans);
-
 
 /*
  !Question 2
@@ -48,33 +45,55 @@ console.log(ans);
  */
 
 var object = [
+  { name: "Gopal", Age: "21" },
+  {
+    name: "Ram",
+    Age: "22",
+    func: function () {
+      console.log("hi");
+    },
+  },
+  { name: "Krishna", Age: "23" },
+];
+var ans2 = object.map(function (val) {
+  var name = { name: val["name"] }; // Alternative - val.name;
+  return name;
+});
 
-    {name : "Gopal",Age: "21"},
-    {name : "Ram",Age: "22",func : function(){console.log("hi")}},
-    {name : "Krishna",Age: "23"},
+console.log(ans2);
 
-    
-]
- var ans2 = object.map(function(val){
-    var name = {name : val["name"]}; // Alternative - val.name;
-    return name;
- });
-
-
- console.log(ans2);
-
-
- /*
+/*
   *Filter.
   * The Structure of Filter is same as the map, just replace the map word with filter. In filter, the returned value must be a boolean i.e.,either true or false. In map, the returned values are stored in a imaginary array, here as we are returning a boolean, instead of saving boolean in array, the current value upon which the loop was running will be stored.
   ! Note: Only those values are stored where true is returned. 
   ! If we use this inside the filter, then it points to the val and hence if this is returned then the val is returned
   */
 
-  var filterr = [1,2,3,4,5];
+var filterr = [1, 2, 3, 4, 5];
 
-  var ans = filterr.filter(function(val){
-        return val % 2 == 0; // In the end of the day, either true or false is returned through this expression and hence the value is stored accordingly..
-  })
+var ans = filterr.filter(function (val) {
+  return val % 2 == 0; // In the end of the day, either true or false is returned through this expression and hence the value is stored accordingly..
+});
 
-  console.log(ans);
+console.log(ans);
+
+/*
+   !Question 3
+   * Filter the name from the array which doesn't contain 'a'. 
+   */
+
+var arr = ["gopal", "narayan", "Hello", "govind"];
+
+var ans = arr.filter(function (val) {
+  return !val.includes("a");
+});
+/*
+    todo: Follow Up- filter those names in which the occurrence of a is atleast 2. 
+ */
+
+var ans2 = arr.filter(function(val){
+    return !(val.split("a").length - 1 >= 2);// Example = gopal = ["gop","al"]; length of array - 2. length - 2 = 2 - 1 = 1 which is same as the number of a in the word.
+})
+
+console.log(ans);
+console.log(ans2);
