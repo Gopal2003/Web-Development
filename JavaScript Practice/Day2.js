@@ -164,48 +164,61 @@ abcde();
 var obj = {
   name: "Harsh",
   sayName: function () {
-    console.log(this);// Return its own object
-  }
+    console.log(this); // Return its own object
+  },
 };
 
 obj.sayName();
 
+var arr = [1, 2, 3, 4, 5];
+
+var ans = arr.filter(function (val) {
+  
+    return this;
+  
+});
+
+var ans2 = arr.map(function(val){
+  if(true){
+    val = val + 2;
+  }
+  return this;
+})
+
+console.log(ans);
+console.log(ans2);
 
 /*
  * Call Apply Bind.
  */
 
-//The default value of this inside a function is window. using .call, we can specify the value of this. 
+//The default value of this inside a function is window. using .call, we can specify the value of this.
 
+var obj1 = { name: "Gopal" };
 
-var obj1 = {name : "Gopal"};
-
-function CAB()
-{
+function CAB() {
   console.log(this);
 }
 
-CAB.call(obj1);// Here, this = obj1.
+CAB.call(obj1); // Here, this = obj1.
 
 /*
  *Apply - Same as call but simplifies the technique of passing the arguments.
  */
 
- var obj1 = {name : "Gopal"};
+var obj1 = { name: "Gopal" };
 
-function apply(a,b,c,d)
-{
-  console.log(this,a,b,c,d);
+function apply(a, b, c, d) {
+  console.log(this, a, b, c, d);
 }
 
 //The only difference is that we pass the remaining arguments into an array.
-apply.apply(obj1,[1,2,3,4]);// Here, this = obj1.
-apply.call(obj1,1,2,3,4);
-
+apply.apply(obj1, [1, 2, 3, 4]); // Here, this = obj1.
+apply.call(obj1, 1, 2, 3, 4);
 
 /*
  *Bind- Bind is same as call but bind never calls the function i.e., it will just bind the function with the value you passed for this.
  */
 
- var saved = apply.bind(obj1,1,2,3);
- saved();
+var saved = apply.bind(obj1, 1, 2, 3);
+saved();

@@ -68,6 +68,7 @@ var object = [
   *Filter.
   * The Structure of Filter is same as the map, just replace the map word with filter. In filter, the returned value must be a boolean i.e.,either true or false. In map, the returned values are stored in a imaginary array, here as we are returning a boolean, instead of saving boolean in array, the current value upon which the loop was running will be stored.
   ! Note: Only those values are stored where true is returned. 
+  ! If we use this inside the filter, then it points to the val and hence if this is returned then the val is returned
   */
 
   var filterr = [1,2,3,4,5];
