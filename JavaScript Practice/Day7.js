@@ -69,6 +69,7 @@ if (num % 1 != 0) { // 11 % 1 = 0 but 11.7 % 1 != 0 as 0.7 is remaining in the r
 } else {
     console.log("Integer");
 }
+    //Way - 2
 //  console.log(Number.isInteger(num));
 
 */
