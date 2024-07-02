@@ -79,7 +79,7 @@ if (num % 1 != 0) { // 11 % 1 = 0 but 11.7 % 1 != 0 as 0.7 is remaining in the r
  ! duplicate([1,2,3,4,5]); -- [1,2,3,4,5,1,2,3,4,5];
  */
 
- //solution.
+//solution.
 /*
  function duplicate(arr)
  {
@@ -92,3 +92,127 @@ if (num % 1 != 0) { // 11 % 1 = 0 but 11.7 % 1 != 0 as 0.7 is remaining in the r
  console.log(arr);
 
  */
+
+/*
+  !Q - Function to reverse a number. 
+  */
+
+function reverseKaro(num) {
+  // return Number(num.toString().split("").reverse().join(""))
+  //way 2
+  // var reverseNum = 0;
+  // while (num > 0) {
+  //   var digit = num % 10;
+  //   reverseNum = reverseNum * 10 + digit;
+  //   num = Math.floor(num / 10);
+  // }
+  // return reverseNum;
+}
+
+// console.log(reverseKaro(1256346));
+
+/*
+   ! Write a JS func that checks whether a passed string is palindrome or not
+*/
+
+function isPalindrome(str) {
+  // if(str.split("").reverse().join("") == str)
+  //   {
+  //     return true;
+  //   }
+
+  //   return false;
+
+  return str.split("").reverse().join("") == str;
+}
+
+console.log(isPalindrome("noon"));
+
+/*
+ ! Write a JS func that returns a passed string with letters in alphabetical order. 
+ */
+
+function alphabeticalOrder(str) {
+  return str.split("").sort().join("");
+}
+
+console.log(alphabeticalOrder("gopal"));
+
+/*
+  ! Write a JS func that accepts a string as a parameter and converts the first letter of each word of the string in upper case. 
+  */
+
+function convert(str) {
+  var arr = str.split(" ");
+
+  var ans = arr.map((val) => {
+    return val.split("")[0].toUpperCase() + val.substr(1);
+  });
+
+  // var ans = "";
+  // arr.forEach((val)=>{
+  //   ans = ans + val.split("")[0].toUpperCase() + val.substr(1) + " ";
+  // })
+
+  return ans.join(" ");
+}
+
+console.log(convert("hello this is the sample sentence to check the function"));
+
+/*
+ ! Write a JS func to get the number occurrences of each letter in specified string. 
+ */
+
+function getOcc(str) {
+  var occurrences = {};
+  str.split("").forEach(function (elem) {
+    // as str.split("") return an character array, by default elem act as character and hence doesn't required to specify '' in obj[elem]. For eg:  obj['elem'] - wrong.
+    if (occurrences.hasOwnProperty(elem)) {
+      occurrences[elem]++;
+    } else {
+      occurrences[elem] = 1;
+    }
+  });
+
+  return occurrences;
+}
+
+var ans = getOcc("appleeeaaa");
+
+console.log(ans);
+
+/*
+ ! loop an array and add all the elements of it 
+ */
+
+function sum(arr) {
+  var sum = 0;
+  arr.forEach((elem) => {
+    sum = sum + elem;
+  });
+
+  return sum;
+}
+
+console.log(sum([2, 3, 4, 5, 6, 7]));
+
+/*
+ ! In an arrays of numbers and strings, add the numbers and return.
+ */
+
+function addNumbers(arr) {
+  var sum = 0;
+  arr.forEach((elem) => {
+    if (typeof elem == "number") {
+      sum = sum + elem;
+    }
+  });
+
+  return sum;
+}
+
+//In JS, "" and '' are same. Both interpret strings.
+console.log(addNumbers([34,"gopal",'a',4,"a","5",45]));
+
+console.log("a ".split(""));
+console.log('a '.split(""));
