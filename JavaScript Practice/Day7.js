@@ -250,17 +250,16 @@ function removeOddGender(arr) {
   });
 
   for (var i = 0; i < count; i++) {
-// The strategy is to remove one non-male object per iteration. Hence, the outer for loop is to tell how many non-male genders are needed to be 
-//removed and the inner for loop used to iterate over the array and remove the first non-male gender every time so that the pattern of array will not be 
-//disturbed and we will not miss the element as we were in Approach 2
+    // The strategy is to remove one non-male object per iteration. Hence, the outer for loop is to tell how many non-male genders are needed to be
+    //removed and the inner for loop used to iterate over the array and remove the first non-male gender every time so that the pattern of array will not be
+    //disturbed and we will not miss the element as we were in Approach 2
 
-    for(var j = 0; j < arr.length; j++) 
-      {
-        if (arr[j].gender != "male") {
-          arr.splice(j,1);
-          break;
-        }
+    for (var j = 0; j < arr.length; j++) {
+      if (arr[j].gender != "male") {
+        arr.splice(j, 1);
+        break;
       }
+    }
   }
 
   return arr;
@@ -293,3 +292,24 @@ console.log(removeOddGender(arr));
 //1. First, find the total non-male counts.
 //2. Write a code to remove the non-male.
 //3. Add a outer loop in 2 and loop till the count finishes.
+
+/*
+ ! Clone the array 
+ */
+
+function cloneArray(arr) {
+  // way - 1
+  // var clonedArr = [...arr];
+  // return clonedArr;
+
+  //way - 2
+
+  var clonedArr = arr.map(function(val){
+      return val;
+  })
+
+  return clonedArr;
+}
+var arr = [1, 2, 3, 4, 5];
+
+console.log(cloneArray(arr));
