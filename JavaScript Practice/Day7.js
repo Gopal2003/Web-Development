@@ -313,3 +313,21 @@ function cloneArray(arr) {
 var arr = [1, 2, 3, 4, 5];
 
 console.log(cloneArray(arr));
+
+/*
+ ! Return the type of the passed argument.
+ */
+
+ function typeTeller(args)
+ {
+   return (typeof(args));
+ }
+
+ console.log(typeTeller([]));
+ console.log(typeTeller(function(){}));
+ console.log(typeTeller(true));
+ console.log(typeTeller(12));
+ console.log(typeTeller("String"));
+ console.log(typeTeller(undefined));
+ console.log(typeTeller(null));
+
