@@ -212,7 +212,84 @@ function addNumbers(arr) {
 }
 
 //In JS, "" and '' are same. Both interpret strings.
-console.log(addNumbers([34,"gopal",'a',4,"a","5",45]));
+console.log(addNumbers([34, "gopal", "a", 4, "a", "5", 45]));
 
 console.log("a ".split(""));
-console.log('a '.split(""));
+console.log("a ".split(""));
+
+/*
+ ! Question - loop an array of objects and remove all objects which don't have gender's value male. 
+ */
+
+function removeOddGender(arr) {
+  //Approach 1
+  // var ans = arr.filter(function(val){
+  //   return val['gender'] == "male";
+  // })
+
+  // return ans;
+
+  //Approach 2
+  // var index = 0;
+  // arr.forEach(function(val){
+  //   if(val['gender'] != "male")
+  //     {
+  //       arr.splice(index,1);//(index, number of values).
+  //     }
+  //     index++;
+  // });
+
+  // return arr;
+
+  //Approach 3 (modification)
+  //1. First, find the total non-male counts.
+
+  var count = 0;
+  arr.forEach(function (elem) {
+    if (elem.gender != "male") count++;
+  });
+
+  for (var i = 0; i < count; i++) {
+// The strategy is to remove one non-male object per iteration. Hence, the outer for loop is to tell how many non-male genders are needed to be 
+//removed and the inner for loop used to iterate over the array and remove the first non-male gender every time so that the pattern of array will not be 
+//disturbed and we will not miss the element as we were in Approach 2
+
+    for(var j = 0; j < arr.length; j++) 
+      {
+        if (arr[j].gender != "male") {
+          arr.splice(j,1);
+          break;
+        }
+      }
+  }
+
+  return arr;
+}
+
+var arr = [
+  { name: "harsh", gender: "male" },
+  { name: "gopal", gender: "male" },
+  { name: "harshita", gender: "female" },
+  { name: "ishika", gender: "female" },
+  { name: "kaliya", gender: "female" },
+  { name: "ram", gender: "male" },
+];
+
+console.log(removeOddGender(arr));
+// Didn't got the expected ans using approach 2. Why?
+// lets consider we have values [1,2,3,4,5] in the array.
+//you want to remove the even numbers from it.
+// first, we encounter 2 as out first target. when we remove element,
+// the behavior of the cursor changes as shown below:
+// [1,2,3,4,5]  [1,3,4,5]
+//    |            |
+
+// In the next iteration, the cursor will move towards the next index,
+//but the 3 was not checked at all. This happens because as 2 is removed,
+//the remaining values are shifted towards its left and hence the value
+//next to the 2 will come on the place of 2 and remains unchecked.
+
+//TO solve this issue, the Approach is
+//1. First, find the total non-male counts.
+//2. Write a code to remove the non-male.
+//3. Add a outer loop in 2 and loop till the count finishes.
