@@ -331,3 +331,59 @@ console.log(cloneArray(arr));
  console.log(typeTeller(undefined));
  console.log(typeTeller(null));
 
+/*
+ ! Write a JavaScript Function to get the last element of an array. Passing a parameter n will return the last n elements of the array. 
+ */
+
+ function getLastElements(arr,n = 1)
+ {
+    var length = arr.length;
+
+    //way 1
+    // var ans= [];
+    // for(var i = length - 1; n != 0; i--,n--)
+    // {
+    //   ans.push(arr[i]);
+    // }
+
+    // return ans;
+
+    return (arr.slice(length - 3,length - 1));
+ }
+
+ var arr = [1,2,3,4,5];
+
+ console.log(getLastElements(arr,4));
+
+
+ /*
+  ! Write a JavaScript program to find the most frequent item of an array. 
+  */
+
+  function mostFreq(arr)
+  {
+    var freq = {};
+    arr.forEach(function(elem)
+    {
+      if(freq.hasOwnProperty(elem))
+      {
+        freq[elem]++;
+      }
+      else
+      {
+        freq[elem] = 1;
+      }
+    })
+
+    // Object.keys(freq) --> returns an array which contains all the keys of the object.
+   var ans =  Object.keys(freq).reduce(function(acc,next){
+        return freq[acc] > freq[next] ? acc : next;
+    })
+    // acc is like max variable which is generally used while finding the max value from the array. Once got the larger value than its own, it change its value to the larger value.
+
+    
+    // Working of .reduce : there are two parameters in reduce and it is a higher order function. The first parameter posses its value and the second parameter changes its value one after another. Based on some condition, the value is returned and the returned value is stored in the first parameter of the reduce function. Hence after the value changes it start possessing the new value. At last the first parameter is returned by the function after the iteration through the array completes.
+    return ans;
+  }
+
+  console.log(mostFreq([1,2,3,1,3,4,5,3,2,3,5,0]));
